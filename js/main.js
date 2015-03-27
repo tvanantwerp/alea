@@ -1,12 +1,50 @@
 function iacto() {
   var words = document.getElementById('words').value,
-      list = ['a', 'b', 'c'],
+      wordlist = 'data/wordlist.csv',
       passwordDisplay = document.getElementById('password'),
-      passwordResult = '';
+      xmlhttp = new XMLHttpRequest();
 
-  for (var word = 0, count = words; word < count; word++) {
-    passwordResult += list[Math.floor(Math.random() * 3)];
+  xmlhttp.onreadystatechange = function() {
+
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+      var passwordLookup = [],
+          passwordResult = '',
+          theList = csvToObj(xmlhttp.responseText);
+
+      for (var word = 0, count = words; word < count; word++) {
+        var digits = [];
+
+        for (var i = 0, j = 5; i < j; i++) {
+          digits.push(Math.floor((Math.random() * 6) + 1));
+        }
+
+        passwordLookup.push(digits.join(''));
+      }
+
+      for (var m = 0, n = passwordLookup.length; m < n; m++) {
+        passwordResult += theList[passwordLookup[m]];
+      }
+
+      passwordDisplay.innerHTML = passwordResult;
+
+    } else {
+      passwordDisplay.innerHTML = "Something went wrong";
+    }
+  };
+
+  xmlhttp.open('GET', wordlist, true);
+  xmlhttp.send();
+}
+
+function csvToObj(csv) {
+  var lines = csv.split('\n'),
+      result = {};
+
+  for (var i = 0, j = lines.length; i < j; i++) {
+    var line = lines[i].split(',');
+    result[line[0]] = line[1];
   }
 
-  passwordDisplay.innerHTML = passwordResult;
+  return result;
 }
