@@ -5,13 +5,31 @@
         <meta name="description" content="Alea is a simple password generator based on selecting several words at random which are easy to memorize but hard to guess.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Alea Password Generator</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="images/manifest.json">
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <meta name="msapplication-TileColor" content="#563882">
+        <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
+        <meta name="msapplication-config" content="images/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1>Alea Password Generator</h1>
-        <p>Alea is a simple password generator based on selecting several words at random which are easy to memorize but hard to guess.</p>
-        <p>Alea uses <a href="http://world.std.com/~reinhold/diceware.html">this wordlist</a> hosted by Arnold G. Reinhold.</p>
-        <p>Alea uses JavaScript to select words from a large list to create your random password. This generator is a proof of concept. A skilled adversary could compromise this generator, so you should not totally trust your results.</p>
+        <img src="images/logo.svg" alt="Alea" class="logo" />
+        <h1>Alea</h1>
+        <h2>Random Password Generator</h2>
 
         <label for="words">Words to Use:&nbsp;</label>
         <select id="words">
@@ -29,7 +47,14 @@
         </select>
         <button onclick="iacto()">Generate</button>
 
-        <div id="password" class="password">Your new password goes here.</div>
+        <div id="password" class="password">New passwords will appear here.</div>
+
+        <p>Alea is a simple password generator based on selecting several words at random which are easy to memorize but hard to guess.</p>
+        <p>Alea is inspired by this article by <a href="https://firstlook.org/theintercept/2015/03/26/passphrases-can-memorize-attackers-cant-guess/" target="_blank">this article</a> by Micah Lee. The word list used by Alea is a random selection of 7,776 words between 5 and 9 characters long taken from <a href="http://www-01.sil.org/linguistics/wordlists/english/wordlist/wordsEn.txt">this</a> list of 109,582 English words.</p>
+        <p>This generator is a proof of concept. A skilled adversary could potentially compromise this hosted generator, so you should not totally trust your results. You can download your own copy of Alea and run it from your own PC by visiting the <a href="https://github.com/tvanantwerp/alea">Github repo.</a></p>
+
+        <footer>Created by <a href="http://tomvanantwerp.com" target="_blank">Tom VanAntwerp</a>, March 28, 2015</footer>
+
         <script src="js/main.js"></script>
     </body>
 </html>
