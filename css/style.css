@@ -18,11 +18,11 @@
 
 html,
 body {
-  background-color: #4a148c;
+  background-color: #563882;
   color: white;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  margin: auto;
+  margin: 30px auto;
   text-align: center;
   width: 540px;
 }
@@ -46,7 +46,7 @@ button,
 button:focus,
 select,
 select:focus {
-  background-color: #9b4dca;
+  background-color: #6d54a5;
   border: none;
   border-radius: 5px;
   color: white;
@@ -62,13 +62,18 @@ h1 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   text-align: left;
 }
 
+.logo {
+  height: auto;
+  width: 200px;
+}
+
 .password {
-  background-color: #9b4dca;
+  background-color: #6d54a5;
   border-radius: 10px;
   color: white;
   font-family: monospace;
