@@ -38,7 +38,7 @@ function iacto() {
 }
 
 function csvToObj(csv) {
-  var lines = csv.split(/\r\n/),
+  var lines = csv.split(/\r\n|\n/),
       result = {};
 
   for (var i = 0, j = lines.length; i < j; i++) {
