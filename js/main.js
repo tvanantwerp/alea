@@ -23,12 +23,12 @@ function iacto() {
       }
 
       for (var m = 0, n = passwordLookup.length; m < n; m++) {
-        passwordResult += theList[passwordLookup[m]];
+        passwordResult += ('<span class="single-word">' + theList[passwordLookup[m]] + '</span>');
       }
 
       passwordDisplay.innerHTML = passwordResult;
 
-    } else {
+    } else if (xmlhttp.readyState == 4 && xmlhttp.status != 200) {
       passwordDisplay.innerHTML = "Something went wrong";
     }
   };
@@ -38,7 +38,7 @@ function iacto() {
 }
 
 function csvToObj(csv) {
-  var lines = csv.split('\n'),
+  var lines = csv.split(/\r\n/),
       result = {};
 
   for (var i = 0, j = lines.length; i < j; i++) {
